@@ -3590,22 +3590,17 @@ ul.nested-list {
 	background-color: lemonchiffon;
 	margin-top: 6.8em;
 	position: fixed;
-	left: -26%;
-	width: 30%;
+	left: -35%;
+	width: 38%;
 	transition: 0.3s;
 	padding: 50px 15px 15px 20px;
 	border-radius: 0 10px 10px 0;
 	z-index: 999;
-	cursor: move;
 }
-/*   
+  
 #mobile-sidebar:hover {
 	left: 0;
-} */
-  
-
-
-
+}
 
 /* Poptrox */
 
