@@ -4114,6 +4114,23 @@ left: 0; /* On mouse-over, make the elements appear as they should */
 			font-size: 11pt;
 		}
 
+		/* Navigation */
+		.nav-links a.focus {
+			padding-top: 28px;
+		}
+
+		.nav-links a:hover {
+			padding-bottom: 28px;
+		}
+
+		#scroll-nav .nav-links a.focus {
+			padding-top: 30px;
+		}
+
+		#scroll-nav .nav-links a:hover {
+			padding-bottom: 32px;
+		}
+
 		/* Image */
 		.image60 {
 			width: 80%;
