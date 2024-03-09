@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+		<title>Passenger Experience Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+
+    <body>
+        <!-- Nav -->
+        <button id="openbtn" class="openbtn" onclick="openNav()" title="Navigation Bar">&#9776;</button>
+			
+        <nav id="desktop-nav" class="page"></nav>
+        
+        <nav id="scroll-nav" class="page"></nav>
+			
+		<!--Back to Top-->
+		<a onclick="topFunction()" href="#" id="back-to-top" class="back-to-top" style="display: inline;">
+			<p class="back-to-top">Top</p>
+			<img src="assets/icon/icons8-up-arrow-64.png">
+		</a>
+
+        <!-- Page-specific content goes here -->
+        <!-- Sidebar -->
+        <div id="child-sidebar" class="sidebar">
+            <ul id="sidebar-links" class="sidebar-list">
+                <li class="sidebar-item" data-target="background"><a href="#background" class="sidebar-link">Background</a></li>
+                <li class="sidebar-item" data-target="logic"><a href="#logic" class="sidebar-link">Methodology</a></li>
+                <li class="sidebar-item" data-target="awards"><a href="#awards" class="sidebar-link">Achievements</a></li>
+            </ul>
+        </div>
+        <div id="mobile-sidebar" class="sidebar phone">
+            <ul id="mobile-sidebar-links" class="sidebar-list">
+                <li class="sidebar-item" data-target="background"><a href="#background" class="sidebar-link">Background</a></li>
+                <li class="sidebar-item" data-target="logic"><a href="#logic" class="sidebar-link">Methodology</a></li>
+                <li class="sidebar-item" data-target="awards"><a href="#awards" class="sidebar-link">Achievements</a></li>
+            </ul>
+        </div>
+
+        <!-- Main -->
+			<div id="main">
+                <section id="background">
+                    <header class="major">
+                        <p>Background Information of</p>
+                        <b><h1>Shinkansen Passenger Satisfaction Prediction</h1></b>
+                    </header>
+
+                    <p>The objective of this project was to predict passenger satisfaction based on their overall experience traveling on the Shinkansen Bullet Train. Leveraging two distinct datasets—Travel data containing passenger and train attributes, and Survey data reflecting post-service experiences—this study was expected to offer actionable insights into enhancing the travel experience. The project demonstrates the application of data analysis in improving service quality in the transportation industry, which could be also extended to other industries.</p>
+                </section>
+
+                <section id="logic">
+                    <header class="major">
+                        <p>Learn More About My</p>
+                        <b><h2>Data Analysis Methodology</h2></b>
+                    </header>
+
+                    <p>The whole data analysis process was stored in this notebook <a href="https://github.com/JiaruiTang/Shinkansen-Passenger-Satisfaction-Prediction/blob/master/MIT_Program_Hackathon.ipynb" target="_blank"><span class="icon brands fa-github"></span> Click here</a>.</p>
+
+                    <ul>
+                        <p>
+                            <li><b>Exploratory Data Analysis (EDA): </b> The initial phase aims to understand the Travel and Survey datasets, including understanding their distributions, identifying missing values, and exploring correlations between various features and passenger satisfaction. This step was crucial for shaping the subsequent data cleaning and modeling strategies (see <a href="#Figure1">Figure 1</a>).</li>
+                            <figure class="image80" id="Figure1">
+                                <a href="images/EGA_full_passengersproject.png" class="image"><img src="images/EGA_full_passengersproject.png" alt="EGA Example of Shinkansen Passenger Satisfaction Prediction" class="with-caption" width="100%"></a>
+                                <figcaption class="caption-small">Figure 1. Scatterplot of departure delays vs arrival delays (left) and barplot of baggage handling experience, stratified by overall experience (right). </figcaption>
+                            </figure>
+                        </p>
+                        <p><li><b>Data Preparation: </b> We merged the Travel and Survey datasets based on passenger IDs, and then cleaned the merged dataset. This includes handling missing values by imputing with the most frequent value or median, depending on the feature type, and one-hot encoding categorical variables to prepare for model input.</li></p>
+                        <p><li><b>Modeling: </b> Given the large amount of features available for modeling, we chose to train three of the most popular machine learning models: LightGBM, XGBoost, and Random Forest. We compared the prediction accuracies of these models to select the highest-performing one, trained using LightGBM algorithm. Additionally, we visualized the feature importances of the best-performing model to identify which factors significantly influenced the prediction of the overall experience (see <a href="#Figure2">Figure 2</a>).</li></p>
+                        <figure class="image80" id="Figure2">
+                            <a href="images/feature_importance_passenger_project.png" class="image"><img src="images/feature_importance_passenger_project.png" alt="Top 20 Important Features Affecting Passengers' Overall Experience" class="with-caption" width="100%"></a>
+                            <figcaption class="caption-small">Figure 2. Barplot of the top 20 important features that can significantly influence the passengers' overall experience. </figcaption>
+                        </figure>
+                    </ul>
+                    <p>Our approach to handling missing data by imputing values, rather than deleting the entire rows, proved to be highly efficient and beneficial, ensuring the maximal utilization of the collected data. Additionally, data visualization played a crucial role throughout the process, offering insightful perspectives and significantly helping with the analysis and decision-making.</p>
+                </section>
+
+                <section id="awards">
+                    <header class="major">
+                        <b><h2>Achievements</h2></b>
+                    </header>
+                    <p>The prediction achieved an accuracy of 95.48%, which ranked 5th among 28 teams.</p>
+                    <img src="images/Hackathon Ranking.png" alt="Hackathon Ranking" class="image60">
+                </section>
+            </div>
+        
+            <div id="pagefooter"></div>
+
+        <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/script.js"></script>
+    </body>
+</html>

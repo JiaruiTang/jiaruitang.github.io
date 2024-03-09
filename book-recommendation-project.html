@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+		<title>Nutritional Intake Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+
+    <body>
+        <!-- Nav -->
+        <button id="openbtn" class="openbtn" onclick="openNav()" title="Navigation Bar">&#9776;</button>
+			
+        <nav id="desktop-nav" class="page"></nav>
+        
+        <nav id="scroll-nav" class="page"></nav>
+			
+		<!--Back to Top-->
+		<a onclick="topFunction()" href="#" id="back-to-top" class="back-to-top" style="display: inline;">
+			<p class="back-to-top">Top</p>
+			<img src="assets/icon/icons8-up-arrow-64.png">
+		</a>
+
+        <!-- Page-specific content goes here -->
+        <!-- Sidebar -->
+        <div id="child-sidebar" class="sidebar">
+            <ul id="sidebar-links" class="sidebar-list">
+                <li class="sidebar-item" data-target="background"><a href="#background" class="sidebar-link">Background</a></li>
+                <li class="sidebar-item" data-target="logic"><a href="#logic" class="sidebar-link">Methodology</a></li>
+                <li class="sidebar-item" data-target="results">
+                    <a href="#results" class="sidebar-link">Results & Visualization</a>
+                    <ul class="nested-list">
+                        <li class="sidebar-item" data-target="extension"><a href="#extension" class="sidebar-link">Extension</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item" data-target="awards"><a href="#awards" class="sidebar-link">Achievements</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main -->
+			<div id="main">
+                <section id="background">
+                    <header class="major">
+                        <p>Background Information of</p>
+                        <b><h1>Analysis on the Association between Nutrient Intakes and Cognitive Function During Early Childhood</h1></b>
+                    </header>
+                
+                <!-- <li><b class="tag">Passion for Data:</b> Driven by a fervent curiosity in data, I am committed to unraveling stories and patterns that could guide strategic decisions and inspire innovation in tech businesses.</li>
+                <li><b class="tag">Statistics Expertise:</b> With a degree on statistics at undergraduate and majoring on biostatistics at graduate school, I have expertise on statistical methods, which can not only be applied to biomedical area but also business operations, marketing, and user behavior analysis in tech companies.</li>
+				<li><b class="tag">Technical Mastery:</b> Skilled in Python, SQL, R, and SAS, I bring sophisticated machine learning and deep learning techniques to dissect complex data, fostering technological and business innovation.</li>
+				<li><b class="tag">Business-driven Technician:</b> My internships have developed my understanding of data analytics in business, determining my desire to derive commercially relevant insights that drive decision-making in business.</li>
+				<li><b class="tag">Organizational Strength:</b> Embracing organization and self-management, I usually apply structured methods like mind maps and OKR to enhance goal tracking and productivity.</li>
+                 -->
+                <p>This project aimed to uncover the relationship between nutrient intake during early childhood and cognitive development, a critical period where the brain grows to 80-90% of its adult size. Recognizing that enriched environments and proper nutrition are pivotal for positive brain development, our study sought to comprehensively explore dietary impacts on cognitive functions in children aged 1-3 years. The research employed a multifaceted approach, assessing dietary quality, individual nutrients, and deriving novel dietary patterns to understand their association with cognitive growth. The approach was further extended to discover the effects of nutritional dietary intake on temperament development.</p>
+                </section>
+
+                <section id="logic">
+                    <header class="major">
+                        <p>Learn More About My</p>
+                        <b><h2>Data Analysis Methodology</h2></b>
+                    </header>
+
+                    <p>The analysis began with organizing a vast dataset and progressed through building various statistical models to decode the association between nutritional intake and cognitive functions from various perspectives. The methodology unfolded as follows:</p>
+                    <ul>
+                        <p>
+                            <li><b>Exploratory Analysis: </b> Initially dealing with 168 nutrient features, we refined this to 157 after excluding those with excessive zeros. Given the complexity of the dataset and the modest sample size (approximately 200 observations and 100 subjects in each age bin), direct analysis using all nutrients was impractical due to high dimension relative to sample size and high correlation among many nutrients (see <a href="#Figure1">Figure 1</a>).</li>
+                            <figure class="image60" id="Figure1">
+                                <a href="images/correlation-matrix-nutrients.png" class="image"><img src="images/correlation-matrix-nutrients.png" alt="Correlation matrix heatmaps of nutrients" class="with-caption" width="100%"></a>
+                                <figcaption class="caption-small">Figure 1. Correlation matrix heatmaps of nutrients in dataset. The blue color represents a positive correlation, while the red color means a negative correlation.</figcaption>
+                            </figure>
+                        </p>
+                        <p><li><b>Dimension Reduction Strategy: </b> To manage the high dimensionality, we opted for dimension reduction, achievable through feature selection or extracting latent features. XGBoost played a crucial role in this phase, enabling feature selection via its feature importance scores. This step was crucial for narrowing down the focus to the most significant nutrients for further analysis. It also uncovered the potential significance of some nutrients not initially scoped as of interest by our collaborative research teams, providing valuable insights. However, this approach had its limitations, potentially overlooking the comprehensive interplay of nutrients on cognitive development due to the narrowed focus.</li></p>
+                        <p><li><b>Comprehensive Analytical Approaches: </b> Aiming to capture a holistic view of dietary impacts on cognitive development, we implemented the analysis in three parts, each utilizing linear mixed-effect models to estimate and identify significant associations between nutritional intake features and cognitive functions:
+                        <ul>
+                            <p><li><b>Index-based Approach: </b> This method evaluated dietary quality using Healthy Eating Index (HEI) scores, providing a straightforward assessment based on dietary guidelines.</li></p>
+                            <p>
+                                <li><b>Univariate Approach: </b> Focused on the impact of individual nutrients on cognitive functions, this approach allowed for the examination of specific nutrient effects in isolation. Given the hierarchical structure of the nutrients reported by NDSR, they were grouped into four layers of analysis (see <a href="#Figure2">Figure 2</a>).</li>
+                                <figure class="image60" id="Figure2">
+                                    <a href="images/four-layer-nutrients.png" class="image"><img src="images/four-layer-nutrients.png" alt="Traditional univariate method nutrient classification using a hierarchical structure." class="with-caption" width="100%"></a>
+                                    <figcaption class="caption-small">Figure 2. Traditional univariate method nutrient classification using a hierarchical structure. The outer most circle displays the nutrient that could not be further subdivided into lower-level constituents. The Layers 2, 3, and 4 nutrients are presented in the 2nd, 3rd and 4th circles. The most inner circle indicates the nutrient category of the nutrients in Layer 4. The color distinguishes every nutrient in all layers according to their nutrient categories.</figcaption>
+                                </figure>
+                            </p>
+                            <p><li><b>Data-driven Approach: </b> Adopted without strong prior assumptions, this method utilized machine learning (EGA - Exploratory Graph Analysis) and factor analysis (CFA - Confirmatory Factor Analysis) methods to uncover patterns and associations that might not be immediately apparent, offering a holistic view of dietary impacts on cognitive development.</li></p>
+                        </ul>
+                        </li></p>
+                    </ul>
+                    <p>This structured analysis approach ensured a thorough exploration of the dataset from multiple perspectives, aiming to capture the nuanced effects of dietary intake on early cognitive growth.</p>
+                </section>
+
+                <section id="results">
+                    <header class="major">
+                        <p>Browse My</p>
+                        <b><h2>Results and Data Visualization</h2></b>
+                    </header>
+
+                    <p>The project concluded with significant findings on how specific dietary patterns influence cognitive development. Meanwhile, the same structured approach was extended to the analysis of the association between nutritional intakes and temperament development during early childhood.</p>
+                    
+                    <p>
+                        <b>Index-based approach. </b>
+                        Several associations between HEI component scores and the different domains of cognitive functions were observed. We visualized the estimated effect size of HEI components on cognitive functions using forest plot (see <a href="#Figure3">Figure 3</a>).
+                    </p>
+
+                    <figure class="image60 margin" id="Figure3">
+                        <a href="images/regression-results.png" class="image"><img src="images/regression-results.png" alt="Forest plots of estimated effect sizes in index-based method." class="with-caption" width="100%"></a>
+                        <figcaption class="caption-small">Figure 3. Forest plots illustrating the estimated impact of HEI components on cognitive functions, specifically focusing on receptive and expressive language skills. The x-axis shows the effect size of HEI components on cognitive functions, and the y-axis lists these components. Dots indicate effect sizes, lines show the 95% confidence intervals, and shadowed areas mark moderate components, where higher scores mean lower nutrient consumption.</figcaption>
+                    </figure>
+
+                    <p>
+                        <b>Univariate Approach. </b>
+                        We utilized circle plots to visualize the significance levels of various nutrients across four layers on fine motor among children aged 12-18 months (see <a href="#Figure4">Figure 4</a>, generated using <span class="icon brands fa-python"></span> Python).
+                    </p>
+
+                    <figure class="image60 margin" id="Figure4">
+                        <a href="FM_12_18.html" class="image"><img src="images/fm-12-18-traditional-method.png" alt="Circle plot visualizing the significant level of the four-layer nutrients on fine motor in traditional univariate method." class="with-caption" width="100%"></a>
+                        <figcaption class="caption-small">Figure 4. Circle plots depicting the significance levels of nutrients across four layers using the traditional univariate analysis method, focusing on fine motor skills among children aged 12-18 months. The nutrients displayed are identical to those in <a href="#Figure2">Figure 2</a>'s circle plot, with colors indicating their significance levels in relation to fine motor cognitive function.</figcaption>
+                    </figure>
+
+                    <p>
+                        <b>Data-driven Approach. </b>
+                        The estimated EGA results and factor loadings obtained by CFA were depicted using network graphs (see <a href="#Figure5">Figure 5</a>).
+                    </p>
+
+                    <figure class="image60 margin" id="Figure5">
+                        <a href="images/cluster-results.png" class="image"><img src="images/cluster-results.png" alt="Circle plot visualizing the significant level of the four-layer nutrients on fine motor in traditional univariate method." class="with-caption" width="100%"></a>
+                        <figcaption class="caption-small">Figure 5. Network graph showing EGA clustering of nutrients for children aged 1-3 years. Circles denote nutrients, with colors indicating NDSR categories and shading representing classification groups. Circle size reflects nutrient factor loadings obtained from CFA within its group. Lines between circles show nutrient correlations: thickness signifies correlation strength, red indicates negative, and green positive correlations.</figcaption>
+                    </figure>
+
+                    <h4>Extension to Temperatment as Outcome</h4>
+
+                    <p>The same index-based approach and data-driven approach were extended to analysis of the association between nutritional intake patterns and temperamtent development among children aged 1 and 2 years old.</p>
+
+                    <p>Check the code and findings <a href="https://github.com/JiaruiTang/Nutrient_Temp_Project" target="_blank">here</a>.</p>
+
+
+                </section>
+
+                <section id="awards">
+                    <header class="major">
+                        <b><h2>Achievements</h2></b>
+                    </header>
+                    <p>The analysis results were selected by 2023 Radiology Departmental Research Symposium for poster presentation.</p>
+                    <img src="images/Dietary Intake Data Poster.png" alt="Academic Poster" class="image60">
+                </section>
+            </div>
+        
+            <div id="pagefooter"></div>
+
+        <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/script.js"></script>
+    </body>
+</html>
