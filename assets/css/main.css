@@ -149,13 +149,11 @@ figcaption {
 		text-decoration: none;
 	}
 
-		@media (hover: hover) {
-			a:hover {
-				border-bottom-color: transparent;
-				color: #ed786a !important;
-				text-decoration: none;
-			}
-		}	
+		a:hover {
+			border-bottom-color: transparent;
+			color: #ed786a !important;
+			text-decoration: none;
+		}
 
 	strong, b {
 		color: #2b2b2b;
@@ -3886,6 +3884,42 @@ left: 0; /* On mouse-over, make the elements appear as they should */
 		opacity: 1.0 !important;
 	}
 
+	body.is-touch a {
+		pointer-events: none;
+	}
+
+	body.is-touch input[type="submit"],
+	body.is-touch input[type="reset"],
+	body.is-touch input[type="button"],
+	body.is-touch .button {
+		pointer-events: none;
+	}
+
+	body.is-touch input[type="submit"].primary,
+	body.is-touch input[type="reset"].primary,
+	body.is-touch input[type="button"].primary,
+	body.is-touch .button.primary {
+		pointer-events: none;
+	}
+
+	body.is-touch #scroll-nav .closebtn {
+		pointer-events: none;
+	}
+
+	body.is-touch .openbtn.show {
+		pointer-events: none;
+	}
+
+	body.is-touch .nav-links a {
+		pointer-events: none;
+		
+	}
+
+	body.is-touch #mobile-sidebar {
+		pointer-events: none;
+	}
+
+
 
 /* 4K/UHD */
 
@@ -4565,8 +4599,3 @@ left: 0; /* On mouse-over, make the elements appear as they should */
 	/* 360x640: A common size for lower to mid-range smartphones.
 375x667: Standard for older iPhones (iPhone 6, 7, 8).
 414x896: Common for newer iPhones in the X and 11 series. */
-
-/* Touch Screen */
-@media (hover: none) {
-    a:hover { color: inherit; }
-}
