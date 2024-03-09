@@ -3950,20 +3950,20 @@ left: 0; /* On mouse-over, make the elements appear as they should */
 		
 		/* Navigation Bar */
 		.nav-links a.focus {
-			padding-top: 35px;
+			padding-top: 32px;
 		}
 
 		.nav-links a:hover {
-			padding-bottom: 35px;
+			padding-bottom: 32px;
 		}
 
-		#scroll-nav .nav-links a.focus {
+		/* #scroll-nav .nav-links a.focus {
 			padding-top: 30px;
 		}
 
 		#scroll-nav .nav-links a:hover {
 			padding-bottom: 32px;
-		}
+		} */
 
 		/* Sidebar */
 		.sidebar {
