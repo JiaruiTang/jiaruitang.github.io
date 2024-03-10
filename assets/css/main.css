@@ -3418,6 +3418,10 @@ nav.page {
     border-radius: 4px; /* Optional for styled image edges */
 }
 
+.project-image.portrait {
+	display: none;
+}
+
 .project-description {
     flex-basis: 66.666%; /* Two thirds of the container */
 }
@@ -4597,11 +4601,48 @@ ul.nested-list {
 			right: 5px;
 		}
 
+		/* Project */
+		.project {
+			flex-wrap: wrap;
+		}
+
+		.project-image {
+			height: 150px;
+			flex-basis: 100%;
+			overflow: hidden;
+			position: relative;
+			padding-right: 0px;
+		}
+
+		.project-description {
+			flex-basis: 100%;
+		}
+
+		.project-image img {
+			margin-top: 0px;
+		}
+
+		.project-image {
+			display: none;
+		}
+
+		.project-image.portrait {
+			display: block;
+		}
+
+		#projects .tablet > h4 {
+			font-size: 1em;
+		}
+
 	}
 
 /* 360x640, 375x667, 414x896 */
 
 	@media screen and (max-width: 530px) {
+		/* Basic */
+		body, input, select, textarea {
+			font-size: 10pt;
+		}
 
 		/* Header */
 
@@ -4628,6 +4669,11 @@ ul.nested-list {
 			width: 100%;
 		}
 
+		/* Video */
+		video.video60 {
+			width: 100%;
+		}
+
 		/* Navigation Bar */
 		.nav-links {
 			gap: 0.35rem;
@@ -4638,7 +4684,34 @@ ul.nested-list {
 			font-size: 0.9em;
 		}
 
+		/* Project */
+		.project-image {
+			height: 90px;
+		}
+
+		.project-description p {
+			font-size: 8pt;
+		}
+
+		.tool-tag {
+			font-size: 8pt;
+		}
+
+		.project-description a {
+			font-size: 8pt;
+		}
+
 	}
+
+	/* @media screen and (max-width: 480px) {
+		.project-image.portrait {
+			display: none;
+		}
+
+		.project-image {
+			display: block;
+		}
+	} */
 	/* 360x640: A common size for lower to mid-range smartphones.
 375x667: Standard for older iPhones (iPhone 6, 7, 8).
 414x896: Common for newer iPhones in the X and 11 series. */
