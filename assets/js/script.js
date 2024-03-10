@@ -137,3 +137,8 @@ window.ontouchstart = function(event) {
     }
 };
 
+window.ontouchcancel = function(event) {
+    if (!event.target.matches('.sidebar.phone')) {
+        document.getElementById("mobile-sidebar").classList.remove('show');
+    }
+};
