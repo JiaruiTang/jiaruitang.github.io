@@ -120,11 +120,9 @@ function openSidebar() {
     document.getElementById("mobile-sidebar").classList.add('show');
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    window.onclick = function(event) {
-        if (!event.target.matches('.sidebar.phone')) {
-            document.getElementById("mobile-sidebar").classList.remove('show');
-        }
-    };
-});
+window.onclick = function(event) {
+    if (!event.target.matches('.sidebar.phone')) {
+        document.getElementById("mobile-sidebar").classList.remove('show');
+    }
+};
 
