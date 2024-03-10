@@ -119,7 +119,13 @@ function openSidebar() {
     document.getElementById("mobile-sidebar").classList.add('show');
 }
 
-window.onclick = function(event) {
+// window.onclick = function(event) {
+//     if (!event.target.matches('.sidebar.phone')) {
+//         document.getElementById("mobile-sidebar").classList.remove('show');
+//     }
+// };
+
+window.onmousedown = function(event) {
     if (!event.target.matches('.sidebar.phone')) {
         document.getElementById("mobile-sidebar").classList.remove('show');
     }
