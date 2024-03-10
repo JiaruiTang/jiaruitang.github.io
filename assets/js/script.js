@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="title">
         <a href="index.html">Jiarui Tang</a>
     </div>
+    <div class="title mobile">
+        <a href="index.html">Jiarui Tang</a>
+	</div>
     <div>
         <ul class="nav-links">
         <li><a href="index.html#about" id="about-link">About</a></li>

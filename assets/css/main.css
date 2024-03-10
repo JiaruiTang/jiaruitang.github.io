@@ -2913,6 +2913,10 @@ nav.page {
 	border: none;
 }
 
+.title.mobile {
+	display: none;
+}
+
 .nav-links {
   gap: 2.5rem;
   list-style: none;
@@ -3502,8 +3506,15 @@ nav.page {
 				padding-top: 0;
 			}
 
-			section#about, section#experience {
+			section#about {
 				min-height: 80vh;
+				display: grid;
+				align-content: stretch;
+			}
+
+			section#experience {
+				min-height: 400px;
+				height: 80vh;
 				display: grid;
 				align-content: stretch;
 			}
@@ -4206,9 +4217,14 @@ ul.nested-list {
 		}
 
 		/* Section */
-		section#about, section#experience {
+		section#about {
 			--side: min(80vw, 80vh);
 			min-height: var(--side);
+		}
+
+		section#experience {
+			--side: min(80vw, 80vh);
+			height: var(--side)!important;
 		}
 
 		section#skills {
@@ -4383,6 +4399,14 @@ ul.nested-list {
 				width: calc(100% - 6.8em);
 			}
 
+			.title {
+				display: none;
+			}
+
+			.title.mobile {
+				display: inline;
+			}
+
 		/* Footer */
 
 			#footer {
@@ -4455,6 +4479,20 @@ ul.nested-list {
 		body, input, select, textarea {
 			font-size: 11pt;
 		}
+
+		/* Navigation Bar */
+		.nav-links {
+			gap: 1rem;
+		}
+
+		.openbtn {
+			right: 10px;
+		}
+
+		/* Back to Top */
+		.back-to-top {
+			right: 5px;
+		}
 	}
 
 /* Small */
@@ -4514,7 +4552,7 @@ ul.nested-list {
 		/* Main */
 
 			#main {
-				padding: 2.25em 1.5em 0.25em 1.5em;
+				padding: 2.25em 1.5em;
 			}
 
 				#main > section {
@@ -4532,12 +4570,38 @@ ul.nested-list {
 				.poptrox-popup .nav-previous:before {
 					margin-top: -1em;
 				}
+		
+		/* Navigation Bar */
+		#scroll-nav {
+			margin: 0 0.5em;
+			width: calc(100% - 1em);
+		}
+
+		#scroll-nav .closebtn {
+			z-index: 99;
+			right: 0px;
+		}
+
+		.openbtn {
+			right: 5px;
+		}
+
+		/* Sidebar */
+		#mobile-sidebar {
+			left: -240px;
+			width: 250px;
+		}
+
+		/* Back to Top */
+		.back-to-top {
+			right: 5px;
+		}
 
 	}
 
-/* XSmall */
+/* 360x640, 375x667, 414x896 */
 
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 530px) {
 
 		/* Header */
 
@@ -4558,6 +4622,21 @@ ul.nested-list {
 				margin-left: 0;
 				padding-left: 0;
 			}
+		
+		/* Image */
+		.image60, .image80 {
+			width: 100%;
+		}
+
+		/* Navigation Bar */
+		.nav-links {
+			gap: 0.35rem;
+			font-size: 0.8em;
+		}
+
+		.title {
+			font-size: 0.9em;
+		}
 
 	}
 	/* 360x640: A common size for lower to mid-range smartphones.
