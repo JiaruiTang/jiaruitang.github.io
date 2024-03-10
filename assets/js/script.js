@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function() {
         
         sidebarItems.forEach((item) => {
             let target = document.getElementById(item.getAttribute('data-target'));
-            console.log(target);
             if (target.offsetTop - 300 <= scrollPosition && (target.offsetTop + target.offsetHeight + 100) > scrollPosition) {
                 sidebarItems.forEach((i) => i.classList.remove('active'));
                 item.classList.add('active');
