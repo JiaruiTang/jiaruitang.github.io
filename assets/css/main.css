@@ -2819,7 +2819,19 @@ video {
 		}
 
 div.inner {
-	overflow: auto;
+	overflow-y: auto;
+}
+
+.icon.arrow.mobile-header {
+    cursor: pointer;
+    height: 1.2rem;
+	width: 1.2rem !important;
+	margin-top: 20px;
+}
+
+#header .arrow-container {
+	display: none;
+	justify-content: center;
 }
 
 /* DESKTOP NAV */
@@ -4374,7 +4386,9 @@ ul.nested-list {
 				text-align: center;
 				top: auto;
 				width: 100%;
-				display: block;
+				display: flex;
+				height: 100vh;
+				justify-content: space-around;
 			}
 
 				#header h1 {
@@ -4391,6 +4405,10 @@ ul.nested-list {
 			
 			body.is-touch #header {
 				border-bottom: grey solid 0.5px;
+			}
+
+			#header .arrow-container {
+				display: flex;
 			}
 		
 		/* Navigation */
