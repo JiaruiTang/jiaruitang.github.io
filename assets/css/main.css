@@ -4618,8 +4618,12 @@ ul.nested-list {
 			flex-basis: 100%;
 		}
 
+		.project-description p {
+			padding-top: 10px;
+		}
+
 		.project-image img {
-			margin-top: 0px;
+			margin-top: -5px;
 		}
 
 		.project-image {
@@ -4685,7 +4689,7 @@ ul.nested-list {
 		}
 
 		.project-description p {
-			font-size: 8pt;
+			font-size: 9pt;
 		}
 
 		.tool-tag {
