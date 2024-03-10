@@ -4627,7 +4627,7 @@ ul.nested-list {
 		}
 
 		.project-image.portrait {
-			display: block;
+			display: block !important;
 		}
 
 		#projects .tablet > h4 {
@@ -4702,16 +4702,6 @@ ul.nested-list {
 		}
 
 	}
-
-	/* @media screen and (max-width: 480px) {
-		.project-image.portrait {
-			display: none;
-		}
-
-		.project-image {
-			display: block;
-		}
-	} */
-	/* 360x640: A common size for lower to mid-range smartphones.
+/* 360x640: A common size for lower to mid-range smartphones.
 375x667: Standard for older iPhones (iPhone 6, 7, 8).
 414x896: Common for newer iPhones in the X and 11 series. */
