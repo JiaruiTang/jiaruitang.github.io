@@ -131,3 +131,9 @@ window.onmousedown = function(event) {
     }
 };
 
+window.ontouchstart = function(event) {
+    if (!event.target.matches('.sidebar.phone')) {
+        document.getElementById("mobile-sidebar").classList.remove('show');
+    }
+};
+
