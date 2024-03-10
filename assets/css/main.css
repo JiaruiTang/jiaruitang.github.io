@@ -4639,11 +4639,6 @@ ul.nested-list {
 /* 360x640, 375x667, 414x896 */
 
 	@media screen and (max-width: 530px) {
-		/* Basic */
-		body, input, select, textarea {
-			font-size: 10pt;
-		}
-
 		/* Header */
 
 			#header {
@@ -4677,11 +4672,11 @@ ul.nested-list {
 		/* Navigation Bar */
 		.nav-links {
 			gap: 0.35rem;
-			font-size: 0.8em;
+			font-size: 0.9em;
 		}
 
 		.title {
-			font-size: 0.9em;
+			font-size: 1em;
 		}
 
 		/* Project */
