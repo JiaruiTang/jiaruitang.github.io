@@ -3598,9 +3598,13 @@ ul.nested-list {
 	z-index: 999;
 }
   
-#mobile-sidebar:hover {
-	left: 0;
-}
+	#mobile-sidebar:hover {
+		left: 0;
+	}
+
+	#mobile-sidebar.show {
+		left: 0;
+	}
 
 /* Poptrox */
 

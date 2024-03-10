@@ -115,3 +115,16 @@ document.addEventListener("DOMContentLoaded", function() {
     onScroll(); // Initialize on load
 });
 
+// Sidebar on Mobile
+function openSidebar() {
+    document.getElementById("mobile-sidebar").classList.add('show');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    window.onclick = function(event) {
+        if (!event.target.matches('.sidebar.phone')) {
+            document.getElementById("mobile-sidebar").classList.remove('show');
+        }
+    };
+});
+
