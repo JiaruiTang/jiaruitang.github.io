@@ -3208,10 +3208,6 @@ nav.page {
 	line-height: 1.6;
 }
 
-.mobile-tab {
-	display: none;
-}
-
 .circle-plot {
 	width: 35%;
 	aspect-ratio : 1 / 1;
@@ -3282,6 +3278,10 @@ nav.page {
 
 .skills-detail {
 	width: calc(100% - 39%);
+}
+
+.mobile-skills-title {
+	display: none;
 }
 
 .programming-container {
@@ -4675,10 +4675,146 @@ ul.nested-list {
 			width: 100%;
 		}
 
-		.mobile-tab {
+		.programming-container {
 			display: flex;
-			margin-top: 30px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 20px 15px;
+			border: #eaeaea solid 1px;
+			border-radius: 10px;
+			background-color: #ffffff;
+    		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		}
+
+		.programming-skills {
+			width: 45%;
+		}
+
+		.soft-list {
+			display: block;
+			border: #eaeaea solid 1px;
+			border-radius: 10px;
+			background-color: #ffffff;
+    		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.soft-item {
+			border-bottom: 1px solid #eaeaea;
+			padding: 10px 0;
+			margin: 0 5%;
+		}
+
+		.skills-wrapper {
+			display: flex;
+			justify-content: space-between;
+			border: #eaeaea solid 1px;
+			border-radius: 10px;
+			background-color: #ffffff;
+    		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.skill {
+			margin: 2%;
+			padding: 5%;
+		}
+
+		.mobile-skills-title {
+			display: block;
+			margin: 20px 0px -5px 0px;
+			padding: 10px 15px;
+			text-align: center;
+			border-radius: 10px;
+			color: #2b2b2b;
+			font-size: 1.1em;
+			font-weight: 500;
+			border: lightgrey solid 1px;
+			box-shadow: -4px -3px 12px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Experience Timeline */
+		#timeline-desktop {
+			display: none;
+		}
+
+		section#experience {
+			height: 900px!important;
+		}
+		
+		.timeline {
+			position: relative;
+			width: 2px; /* Makes the line thin, which is the width of the vertical line */
+			background-color: #bbb; /* Color of the line */
+			margin: 0 auto; /* Centers the line horizontally */
+			height: auto; /* The height will be determined by the content */
+		}
+
+		.timeline-container {
+			position: relative;
+			width: 50%;
+			padding: 20px;
+		}
+
+		.timeline-block {
+			position: relative;
+			width: 100%;
+			margin-bottom: 40px; /* Space between entries */
+		}
+
+		.timeline-block .content h3 {
+			font-size: 11pt;
+			margin: 0 0 0.5em 0;
+		}
+
+		.timeline-block .content p {
+			font-size: 8.5pt;
+			margin: 0 0 0.5em 0;
+		}
+
+		.timeline-point {
+			position: relative;
+			top: 20px;
+			transform: translateX(-50%);
+			height: 1.6em;
+			width: 1.6em;
+			border-radius: 50%;
+			background-color: #fff;
+			border: 2px solid #3498db; 
+			text-align: center;
+			line-height: 1.6em;
+			font-size: 0.8em;
+		}
+		
+		.timeline-point:before {
+			content: attr(data-year);
+			position: absolute;
+			top: 24px;
+			bottom: -33px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #3498db;
+			color: white;
+			white-space: nowrap;
+			padding: 3px 5px; /* Smaller padding for tags */
+			border-radius: 2px; /* Smaller border-radius for tags */
+			font-size: 0.8em;
+		}
+		
+		.content {
+			background-color: white;
+			padding: 20px 4px 8px 8px; /* Smaller padding for content boxes */
+			border-radius: 2px; /* Smaller border-radius for content boxes */
+			width: 220px; /* Full width minus space for the line */
+			margin-left: 3em; /* Offset for the timeline line */
+			box-shadow: none; /* Remove box shadow for a flat design */
+			text-align: left; /* Align to the left */
+		}
+
+		/* Adjust the positions to spread across the timeline */
+		.timeline-block:nth-of-type(1) { top: -10px; }
+		.timeline-block:nth-of-type(2) { top: -85px; }
+		.timeline-block:nth-of-type(3) { top: -105px; }
+		.timeline-block:nth-of-type(4) { top: -105px; }
+		.timeline-block:nth-of-type(5) { top: -10px; }
 
 	}
 
@@ -4740,6 +4876,10 @@ ul.nested-list {
 
 		.project-description a {
 			font-size: 8pt;
+		}
+
+		.work-item p {
+			font-size: 0.8em;
 		}
 
 	}
