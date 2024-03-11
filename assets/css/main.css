@@ -3339,6 +3339,10 @@ nav.page {
   margin-top: 10px;
 }
 
+#timeline-mobile {
+	display: none;
+}
+
 .timeline-container {
     position: relative;
     width: 100%;
@@ -4734,6 +4738,10 @@ ul.nested-list {
 		/* Experience Timeline */
 		#timeline-desktop {
 			display: none;
+		}
+
+		#timeline-mobile {
+			display: block;
 		}
 
 		section#experience {
