@@ -3208,6 +3208,10 @@ nav.page {
 	line-height: 1.6;
 }
 
+.mobile-tab {
+	display: none;
+}
+
 .circle-plot {
 	width: 35%;
 	aspect-ratio : 1 / 1;
@@ -3903,6 +3907,7 @@ ul.nested-list {
 	body.is-touch #header {
 		background-attachment: scroll;
 		background-size: auto, cover;
+		margin: 0 !important;
 	}
 
 	body.is-touch .poptrox-popup .nav-next,
@@ -4209,6 +4214,11 @@ ul.nested-list {
 			padding: 2em 1em;
 			width: 26%;
 			justify-content: flex-start;
+			overflow: hidden;
+		}
+
+		div.inner {
+			overflow: hidden;
 		}
 
 		#header .image.avatar {
@@ -4654,6 +4664,20 @@ ul.nested-list {
 
 		#projects .tablet > h4 {
 			font-size: 1em;
+		}
+
+		/* Skills Section */
+		.circle-plot {
+			display: none;
+		}
+
+		.skills-detail {
+			width: 100%;
+		}
+
+		.mobile-tab {
+			display: flex;
+			margin-top: 30px;
 		}
 
 	}

@@ -273,5 +273,74 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	}
 });
 
+// Skills Section Mobile
+// Define elements to hide
+const elementsToHide = ['.programming-container', '.skills-wrapper', '.soft-list'];
+	
+function openContent(evt, skillsName) {
+	// Declare all variables
+	var i, tablinks;
+  
+	// Get all elements in elementsToHide and hide them
+	elementsToHide.forEach(selector => {
+		const element = document.querySelector(selector);
+		if (element) {
+			element.style.display = 'none';
+		}
+	});
+	
+	// Get all elements with class="tablinks" and remove the class "active"
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+	  tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+  
+	// Show the current tab, and add an "active" class to the button that opened the tab
+	console.log(document.querySelector("."+skillsName).style);
+	document.querySelector("."+skillsName).style.display = "block";
+	if (skillsName=="skills-wrapper") {
+		document.querySelector("."+skillsName).style.display = 'flex';
+	}
+	evt.currentTarget.className += " active";
+}
 
+// Hide Tab Content in Skills Section
+window.onclick = function(event) {
+	console.log(document.querySelector(".mobile-tab").checkVisibility());
+    if ((!event.target.matches('body.is-touch .tablinks')) & document.querySelector(".mobile-tab").checkVisibility()) {
+        tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		// Get all elements in elementsToHide and hide them
+		elementsToHide.forEach(selector => {
+			const element = document.querySelector(selector);
+			if (element) {
+				element.style.display = 'none';
+			}
+		});
+
+    }
+};
+
+// For Safari on touch screen
+window.ontouchcancel = function(event) {
+	console.log(document.querySelector(".mobile-tab").checkVisibility());
+    if ((!event.target.matches('body.is-touch .tablinks')) & document.querySelector(".mobile-tab").checkVisibility()) {
+        tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		// Get all elements in elementsToHide and hide them
+		elementsToHide.forEach(selector => {
+			const element = document.querySelector(selector);
+			if (element) {
+				element.style.display = 'none';
+			}
+		});
+
+    }
+};
+
+//window.onmousedown, window.ontouchstart, window.ontouchcancel
 
